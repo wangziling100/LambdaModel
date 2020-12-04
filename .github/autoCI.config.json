@@ -1,6 +1,6 @@
 {
     "actions": [
-        "pip install --user torchlambda",
+        "pip install torchlambda",
         "torchlambda scheme"
     ]
 }
