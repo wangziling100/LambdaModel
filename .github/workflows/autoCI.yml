@@ -23,13 +23,10 @@ jobs:
         with:
           configPath: .github/autoCI.config.json
           #modulesDir: packages
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:
           name: dist
           path: ${{steps.auto-ci.outputs.moduleDir}}/dist
-      - name: Upload src
-        uses: actions/upload-artifact@v2
-        with:
-          name: src
-          path: ${{steps.auto-ci.outputs.moduleDir}}/src
