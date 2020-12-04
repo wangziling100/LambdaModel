@@ -1,5 +1,6 @@
 {
     "actions": [
+        "export PATH=$PATH:/home/runner/.local/bin",
         "pip install --user torchlambda",
         "torchlambda scheme"
     ]
