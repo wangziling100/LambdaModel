@@ -1,7 +1,6 @@
 {
     "actions": [
-        "python3 --version",
-        "pip3 install torchlambda",
+        "pip install --user torchlambda",
         "torchlambda scheme"
     ]
 }

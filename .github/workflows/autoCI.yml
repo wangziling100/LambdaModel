@@ -10,32 +10,19 @@ jobs:
       moduleDir: ${{ steps.auto-ci.outputs.moduleDir}}
       info: ${{ steps.auto-ci.outputs.info}}
     steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with: 
+          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+
       - uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-            cache-name: cache-node-modules
-        with:
-            # npm cache files are stored in `~/.npm` on Linux/macOS
-            path: node_modules
-            key: ${{ runner.os }}-${{ hashFiles('**/yarn-lock.json') }}
-            # restore-keys: ${{ runner.os }}-
       - name: auto-ci
         id: auto-ci
         uses: wangziling100/AutoCI@v1.0.8
         with:
           configPath: .github/autoCI.config.json
           #modulesDir: packages
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: ${{steps.auto-ci.outputs.moduleDir}}/coverage
-      - name: Upload codecov yml
-        uses: actions/upload-artifact@v2
-        with:
-          name: codecov-yml
-          path: ${{steps.auto-ci.outputs.moduleDir}}/.github/codecov.yml
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:
