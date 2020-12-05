@@ -27,6 +27,8 @@ jobs:
           #modulesDir: packages
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:
