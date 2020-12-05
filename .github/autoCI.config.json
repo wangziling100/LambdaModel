@@ -5,7 +5,8 @@
         "cd demo && /home/runner/.local/bin/torchlambda layer ./torchlambda/model.ptc --destination \"model.zip\"",
         "mkdir dist",
         "mv demo/torchlambda.zip dist",
-        "mv demo/model.zip dist"
+        "mv demo/model.zip dist",
+        "aws lambda create-function --function-name demo --runtime provided --timeout 30 --memory-size 1024 --handler torchlambda --zip-file dist/torchlambda.zip"
 
     ]
 }
