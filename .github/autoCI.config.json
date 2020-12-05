@@ -1,6 +1,8 @@
 {
     "actions": [
         "pip install --user torchlambda",
-        "cd demo && /home/runner/.local/bin/torchlambda build ./torchlambda"
+        "cd demo && /home/runner/.local/bin/torchlambda build ./torchlambda",
+        "mkdir dist",
+        "mv demo/torchlambda.zip dist"
     ]
 }
