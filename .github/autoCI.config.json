@@ -2,7 +2,10 @@
     "actions": [
         "pip install --user torchlambda",
         "cd demo && /home/runner/.local/bin/torchlambda build ./torchlambda",
+        "cd demo && /home/runner/.local/bin/torchlambda layer ./torchlambda/model.ptc --destination \"model.zip\"",
         "mkdir dist",
-        "mv demo/torchlambda.zip dist"
+        "mv demo/torchlambda.zip dist",
+        "mv demo/model.zip dist"
+
     ]
 }
