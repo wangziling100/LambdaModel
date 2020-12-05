@@ -1,6 +1,6 @@
 {
     "actions": [
         "pip install --user torchlambda",
-        "cd demo && /home/runner/.local/bin/torchlambda build ./torchlambda --compilation \"-Wall -02\""
+        "cd demo && /home/runner/.local/bin/torchlambda build ./torchlambda"
     ]
 }
